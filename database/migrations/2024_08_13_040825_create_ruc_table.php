@@ -12,8 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('ruc', function (Blueprint $table) {
-            $table->id();
-            $table->string('ruc');
+            $table->string('ruc')->primary();
             $table->string('ubigeo');
             $table->string('tipo_via')->nullable();
             $table->string('nombre_via')->nullable();
@@ -25,7 +24,6 @@ return new class extends Migration
             $table->string('lote')->nullable();
             $table->string('departamento')->nullable();
             $table->string('manzana')->nullable();
-            $table->timestamps();
         });
     }
 

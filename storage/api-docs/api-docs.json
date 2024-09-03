@@ -1,0 +1,118 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API SUNAT RUC",
+        "description": "Listado de Ruc",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost/ApiRestSunat/public"
+        }
+    ],
+    "paths": {
+        "/api/ruc/{ruc}": {
+            "get": {
+                "tags": [
+                    "SUNAT"
+                ],
+                "summary": "Mostrar la información de un cliente",
+                "operationId": "0897fad62c7a07de69d99f0a47167a5d",
+                "parameters": [
+                    {
+                        "name": "ruc",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "ruc": {
+                                            "type": "string",
+                                            "example": "10000000979"
+                                        },
+                                        "ubigeo": {
+                                            "type": "string",
+                                            "example": "250105"
+                                        },
+                                        "tipo_via": {
+                                            "type": "string",
+                                            "example": "JR."
+                                        },
+                                        "nombre_via": {
+                                            "type": "string",
+                                            "example": "NUEVA LUZ DE FATIMA"
+                                        },
+                                        "codigo_zona": {
+                                            "type": "string",
+                                            "example": "NULL"
+                                        },
+                                        "tipo_zona": {
+                                            "type": "string",
+                                            "example": "NULL"
+                                        },
+                                        "numero": {
+                                            "type": "string",
+                                            "example": "82"
+                                        },
+                                        "kilometro": {
+                                            "type": "string",
+                                            "example": "NULL"
+                                        },
+                                        "interior": {
+                                            "type": "string",
+                                            "example": "12"
+                                        },
+                                        "lote": {
+                                            "type": "string",
+                                            "example": "NULL"
+                                        },
+                                        "departamento": {
+                                            "type": "string",
+                                            "example": "NULL"
+                                        },
+                                        "manzana": {
+                                            "type": "string",
+                                            "example": "NULL"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "NO ENCONTRADO",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "No ubieron resultados."
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "SUNAT",
+            "description": "SUNAT"
+        }
+    ]
+}

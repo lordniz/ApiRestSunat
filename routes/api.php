@@ -7,11 +7,12 @@ use App\Http\Controllers\Api\agenteretController;
 
 
 Route::get('/ruc',[rucController::class, 'index']);
-Route::get('/agente-ret',[agenteretController::class, 'index']);
+Route::get('/ruc/{ruc}',[rucController::class, 'show']);
 
-// Route::get('/ruc/{id}',function(){
-//     return 'Obtener un estudiante';
-// });
+Route::get('/agente-ret',[agenteretController::class, 'index']);
+Route::get('/agente-ret/{agente_ret}',[rucController::class, 'show']);
+
+
 // Route::post('/ruc',function(){
 //     return 'Creando Estudiantes';
 // });

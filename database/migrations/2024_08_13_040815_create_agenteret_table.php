@@ -12,12 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('agenteret', function (Blueprint $table) {
-            $table->id();
-            $table->string('ruc');
+            $table->string('ruc')->primary();
             $table->string('nombre_razon_social');
-            $table->date('fecha_inicio');//ejemplo(01/10/2023)
+            $table->date('fecha_inicio');
             $table->string('resolucion_sunat');
-            $table->timestamps();
         });
     }
 

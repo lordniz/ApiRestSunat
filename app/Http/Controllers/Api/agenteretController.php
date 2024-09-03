@@ -19,4 +19,16 @@ class agenteretController extends Controller
         }
         return response()->json($agente_ret, 200);
     }
+
+    public function show(AgenteRet $agente_ret) {
+        if($agente_ret->isEmpty()){
+            $data = [
+                'message' => 'No se encontraron estudiantes',
+                'status' => 404
+            ];
+            return response()->json($data, 404);
+        }
+
+        return response()->json($agente_ret, 200);
+    }
 }

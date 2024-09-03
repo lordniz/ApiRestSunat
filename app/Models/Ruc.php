@@ -11,6 +11,10 @@ class Ruc extends Model
     
     protected$table = 'ruc';
 
+    protected $primaryKey = 'ruc';
+    public $incrementing = false;
+    protected $keyType = 'string';
+
     protected $fillable =[
         'ruc',
         'ubigeo',
