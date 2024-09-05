@@ -16,7 +16,7 @@
                 "tags": [
                     "SUNAT"
                 ],
-                "summary": "Mostrar la información de un cliente",
+                "summary": "Información de Entidad",
                 "operationId": "0897fad62c7a07de69d99f0a47167a5d",
                 "parameters": [
                     {
