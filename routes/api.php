@@ -6,11 +6,11 @@ use App\Http\Controllers\Api\rucController;
 use App\Http\Controllers\Api\agenteretController;
 
 
-Route::get('/ruc',[rucController::class, 'index']);
+// Route::get('/ruc',[rucController::class, 'index']);
 Route::get('/ruc/{ruc}',[rucController::class, 'show']);
 
-Route::get('/agente-ret',[agenteretController::class, 'index']);
-Route::get('/agente-ret/{agente_ret}',[rucController::class, 'show']);
+// Route::get('/agenteret',[agenteretController::class, 'index']);
+Route::get('/agenteret/{agenteret}',[agenteretController::class, 'show']);
 
 
 // Route::post('/ruc',function(){

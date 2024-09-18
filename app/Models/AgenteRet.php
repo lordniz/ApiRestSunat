@@ -11,6 +11,11 @@ class AgenteRet extends Model
 
     protected$table = 'agenteret';
 
+
+    protected $primaryKey = 'ruc';
+    public $incrementing = false;
+    protected $keyType = 'string';
+
     protected $fillable =[
         'ruc',
         'nombre_razon_social',

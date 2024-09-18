@@ -8,9 +8,77 @@
     "servers": [
         {
             "url": "http://localhost/ApiRestSunat/public"
+        },
+        {
+            "url": "http://localhost/ApiRestSunat/public"
         }
     ],
     "paths": {
+        "/api/agenteret/{agenteret}": {
+            "get": {
+                "tags": [
+                    "RETENCION"
+                ],
+                "summary": "Información de Entidad",
+                "operationId": "5369ea6672c3360b27c30e5e536adfa3",
+                "parameters": [
+                    {
+                        "name": "agenteret",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "ruc": {
+                                            "type": "string",
+                                            "example": "10008228774"
+                                        },
+                                        "nombre_razon_social": {
+                                            "type": "string",
+                                            "example": "CELIZ CRUZ JOSE ANTONIO"
+                                        },
+                                        "fecha_inicio": {
+                                            "type": "string",
+                                            "example": "15/05/2023"
+                                        },
+                                        "resolucion_sunat": {
+                                            "type": "string",
+                                            "example": "RS R.S.186-2023"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "NO ENCONTRADO",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "No ubieron resultados."
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/api/ruc/{ruc}": {
             "get": {
                 "tags": [
@@ -110,6 +178,10 @@
         }
     },
     "tags": [
+        {
+            "name": "RETENCION",
+            "description": "RETENCION"
+        },
         {
             "name": "SUNAT",
             "description": "SUNAT"

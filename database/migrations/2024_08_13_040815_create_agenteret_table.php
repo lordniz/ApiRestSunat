@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('agenteret', function (Blueprint $table) {
             $table->string('ruc')->primary();
             $table->string('nombre_razon_social');
-            $table->date('fecha_inicio');
+            $table->string('fecha_inicio');
             $table->string('resolucion_sunat');
         });
     }
